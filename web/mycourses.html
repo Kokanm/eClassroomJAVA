@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>E-Classroom</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="Detailsproverka.js"></script>
+    <script>
+            $('html').addClass($.fn.details.support ? 'details' : 'no-details');
+            $('details').details();
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <ul>
+        <li><a href="index.xhtml"><img src="Hogwartscrest.png" width="50" alt="University image"/></a></li>
+        <a href="index.xhtml"><canvas id = "text" width = "200" height = "50"></canvas></a>
+        <script>
+            var canvas = document.getElementById("text");
+            var context = canvas.getContext("2d");
+
+            context.font = "bold 30px sans-serif";
+            context.textAlign = "center";
+            context.lineWidth = 2;
+            context.strokeStyle = "black";
+            context.strokeText("E-Classroom", 100, 40);
+        </script>
+        <li id="login">You are currently using guest access
+            (<a href="index.xhtml">log in</a>)</li>
+    </ul>
+</header>
+
+
+<section class="page-content">
+    <div class="laside">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="index.xhtml">Home</a></li>
+                <li><a href="myprofile.html">My profile</a></li>
+                <li id="except"><details>
+                    <summary><a href="mycourses.html">My courses</a></summary>
+                    <ul id="mycourses">
+                        <li><a href="predmet.html">Defence Against the Dark Arts</a></li>
+                        <li><a href="predmet.html">Flying</a></li>
+                        <li><a href="predmet.html">Potions</a></li>
+                    </ul>
+                </details></li>
+            </ul>
+        </nav>
+
+        <div class="Administration">
+            <h3>Administration</h3>
+            <ul>
+                <li><a href="editprofile.xhtml">Edit profile</a></li>
+                <li><a href="change.xhtml">Change password</a></li>
+                <li><a href="messaging.html">Messaging</a></li>
+            </ul>
+        </div>
+
+        <div class="events">
+            <h3>Upcoming events</h3>
+            <p>No upcoming events</p>
+        </div>
+    </div>
+
+    <div class="center">
+        <h3>Course overview</h3>
+        <div class="predmeti">
+            <div id="predmet1">
+                <p><a href="predmet.html">Defence Against the Dark Arts</a></p>
+                <ul>
+                    <li class="attention">You have assignments that need attention.</li>
+                </ul>
+            </div>
+            <div id="predmet2">
+                <p><a href="predmet.html">Potions</a></p>
+                <ul>
+                    <li class="attention">You have assignments that need attention.</li>
+                    <li class="forumpost">There are new forum posts.</li>
+                </ul>
+            </div>
+            <div id="predmet3">
+                <p><a href="predmet.html">Flying</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="raside">
+        <div class="events">
+            <h3>Upcoming events</h3>
+            <p>No upcoming events</p>
+        </div>
+        <div class="news">
+            <h3>News</h3>
+            <p>No news</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h6>&copy; 2014-2015 by Hogwarts University of Witchcraft and Wizardry.</h6>
+    <address>
+        Contact us at dumbledore@hog.uni-lj.si</a>
+    </address>
+</footer>
+
+</body>
+</html>

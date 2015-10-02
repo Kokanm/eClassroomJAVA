@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <meta charset="UTF-8"/>
+        <title>Profile: Create new profile</title>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="Detailsproverka.js"></script>
+        <script>
+            $(function () {
+                $('html').addClass($.fn.details.support ? 'details' : 'no-details');
+                $('details').details();
+            });
+        </script>
+    </h:head>
+<h:body>
+    <header>
+        <ul>
+            <li><a href="index.xhtml"><img src="Hogwartscrest.png" width="50" alt="University image"/></a></li>
+            <a href="index.xhtml"><canvas id = "text" width = "200" height = "50"></canvas></a>
+            <script>
+                var canvas = document.getElementById("text");
+                var context = canvas.getContext("2d");
+
+                context.font = "bold 30px sans-serif";
+                context.textAlign = "center";
+                context.lineWidth = 2;
+                context.strokeStyle = "black";
+                context.strokeText("E-Classroom", 100, 40);
+            </script>
+            <li id="login">
+                <h:form rendered="#{userBean.loggedIn}">
+                    <p>You are currently logged in as 
+                        <h:commandLink value="#{userBean.firstname} #{userBean.lastname} " action="myprofile.html"/>
+                        (<h:commandLink value="log out" action="#{userBean.logout()}" />)</p>
+                </h:form>
+            </li>   
+        </ul>
+    </header>
+
+
+    <section>
+        <div class="laside">
+            <nav>
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.xhtml">Home</a></li>
+                    <li><a href="myprofile.html">My profile</a></li>
+                    <li id="except"><details>
+                        <summary><a href="mycourses.html">My courses</a></summary>
+                        <ul id="mycourses">
+                            <li><a href="predmet.html">Defence Against the Dark Arts</a></li>
+                            <li><a href="predmet.html">Flying</a></li>
+                            <li><a href="predmet.html">Potions</a></li>
+                        </ul>
+                    </details></li>
+                </ul>
+            </nav>
+
+            <div class="Administration">
+                <h3>Administration</h3>
+                <ul>
+                    <li><a href="editprofile.xhtml">Edit profile</a></li>
+                    <li><a href="change.xhtml">Change password</a></li>
+                    <li><a href="messaging.html">Messaging</a></li>
+                </ul>
+            </div>
+
+            <div class="events">
+                <h3>Upcoming events</h3>
+                <p>No upcoming events</p>
+            </div>
+        </div>
+
+        <div class="centers">
+            <h:form id="registration">
+                <div class="right">
+                    <h:panelGrid columns="3">
+                        <h:outputLabel value="Username*  "></h:outputLabel>
+                        <h:inputText id="username" class="box2" value="#{userBean.username}" 
+                                     requiredMessage="Exactly 6 characters." 
+                                     validatorMessage="Invalid username" required="true">
+                            <f:validateLength maximum="6" minimum="6" />
+                        </h:inputText>
+                        <h:message id="usernameMessage" for="username" styleClass="error"/>
+
+                        <h:outputLabel value="Password*  "></h:outputLabel>
+                        <h:inputSecret id="pass" class="box2" value="#{userBean.password}" 
+                                       requiredMessage="At least 8 characters. At least one number, one lowercase and one uppercase letter" 
+                                       required="true" validatorMessage="Invalid password">
+                            <f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,})" />
+                        </h:inputSecret>
+                        <h:message id="passwordMessage" for="pass" styleClass="error"/>
+                        
+                        <h:outputLabel value="Email*  "></h:outputLabel>
+                        <h:inputText id="email" class="box2" value="#{userBean.email}" requiredMessage="Enter your email address" validatorMessage="Invalid e-mail address format" required="true">
+                            <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+                        </h:inputText>
+                        <h:message id="emailMessage" for="email" styleClass="error"/>
+                        
+                        <h:outputLabel value="Email (again)*  "></h:outputLabel>
+                        <h:inputText id="emaila" class="box2" title="Confirm your email address" required="true" />                           
+                        <h:message id="emailaMessage" for="emaila" styleClass="error"/>
+                        
+                        <h:outputLabel value="First name*  "></h:outputLabel>
+                        <h:inputText id="firstname" class="box2" value="#{userBean.firstname}" requiredMessage="Enter your first name" 
+                                     validatorMessage="Your name must start with capital letter." required="true">
+                            <f:validateRegex pattern="(^[A-Z][a-z]+$)"/>
+                            <f:validateLength maximum="30" />
+                        </h:inputText>
+                        <h:message id="firstnameMessage" for="firstname" styleClass="error"/>
+                        
+                        <h:outputLabel value="Surname*  "></h:outputLabel>
+                        <h:inputText id="surname" class="box2" value="#{userBean.lastname}" requiredMessage="Enter your surname" 
+                                     validatorMessage="Your surname must start with capital letter." required="true">
+                            <f:validateRegex pattern="(^[A-Z][a-z]+$)"/>
+                            <f:validateLength maximum="30" />
+                        </h:inputText>
+                        <h:message id="surnameMessage" for="surname" styleClass="error"/>
+                        
+                        <h:outputLabel value="City/town  "></h:outputLabel>
+                        <h:inputText id="city" class="box2" value="#{userBean.city}"/>
+                        <h:message id="cityMessage" for="city" styleClass="error"/>
+
+                        <h:outputLabel value="Country  "></h:outputLabel>
+                        <h:inputText id="country" class="box2" value="#{userBean.country}"/>
+                        <h:message id="countryMessage" for="country" styleClass="error"/>
+                    </h:panelGrid>
+                    <h:commandButton type = "submit" value = "Create my new account" action="#{userBean.save()}" styleClass="apply" />
+                    <h:commandButton type = "reset" value = "Cancel" styleClass="cross" />
+                </div>
+            </h:form>
+        </div>
+
+    </section>
+
+    <footer>
+        <h6>&copy; 2014-2015 by Hogwarts University of Witchcraft and Wizardry.</h6>
+        <address>
+            Contact us at dumbledore@hog.uni-lj.si
+        </address>
+
+    </footer>
+</h:body>
+</html>

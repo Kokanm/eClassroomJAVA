@@ -1,0 +1,665 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header, section, footer {
+    display: block;
+}
+
+a{
+    color: #AC3A37;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+    color: #841815;
+    text-decoration: underline;
+}
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    height:50px;
+    background:#80C885;
+    border-bottom:3px solid #2B8731;
+    z-index: 1;
+}
+
+header li{
+    display: inline-block;
+    float: left;
+}
+
+#pagetitle {
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#login {
+    margin-top: 25px;
+    float: right;
+}
+
+section {
+    height: 90%;
+    margin: 20px auto;
+    padding-top: 60px;
+}
+
+.laside {
+    width: 22%;
+    float: left;
+    text-align: left;
+    word-wrap: break-word;
+    margin-left: 1%;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.center{
+    width: 40%;
+    float: left;
+    text-align: left;
+    word-wrap: break-word;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 20px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.centers{
+    width: 60%;
+    text-align: left;
+    word-wrap: break-word;
+    margin-left: 25%;
+    margin-right: 6%;
+    margin-top: 20px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.raside {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    width: 24%;
+    float: left;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+h3 {
+    border-bottom: 2px solid #AC3A37;
+    background-color: #80C885;
+}
+
+.lprofil {
+    position: absolute;
+    margin-top: 180px;
+    margin-left: 130px;
+    text-align: right;
+    font-weight: bold;
+
+}
+
+#ext {
+    color: #AC3A37;
+    text-decoration: none;
+}
+
+.rprofil{
+    position: absolute;
+    margin-top: 180px;
+    margin-left: 270px;
+}
+
+nav {
+    margin: 10px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    background-color: #F0F0F0;
+}
+
+nav ul {
+    margin: 5px;
+    list-style-type: square;
+    list-style-position: inside;
+    padding-bottom: 5px;
+}
+
+nav #mycourses {
+    padding-left: 15px;
+}
+
+.Administration {
+    margin: 10px;
+    margin-top: 40px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    background-color: #F0F0F0;
+}
+
+.Administration ul {
+    margin: 5px;
+    list-style-type: square;
+    list-style-position: inside;
+    padding-bottom: 5px;
+}
+
+nav #mycourses {
+    padding-left: 15px;
+}
+
+.search {
+    font-size: 18px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #AC3A37;
+    background-color: #80C885;
+}
+
+.center h2 {
+    padding-bottom: 15px;
+}
+
+
+.search #scbox, #scgumb {
+    height: 25px;
+}
+
+.courses {
+    background-color: #F0F0F0;
+    padding: 5px;
+}
+
+details, summary {
+    display: block;
+}
+
+summary {
+    cursor: pointer;
+}
+
+.courses details {
+    padding: 10px;
+}
+
+.courses summary {
+    padding: 10px;
+}
+
+summary:hover{
+    background-color: #D7F0D9;
+    border: 1px solid #ADDEB0;
+}
+
+.no-details details > * {
+    display: none;
+}
+
+.no-details details > summary:before {
+    float: left;
+    width: 20px;
+    content: '► ';
+}
+
+.no-details details.open > summary:before {
+    content: '▼ ';
+}
+
+.no-details details summary {
+    display: block;
+}
+
+.courses details{
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 20px;
+}
+
+.undergraduate > details{
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.undergraduate details > summary{
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.undergraduate li{
+    padding-left: 30px;
+    list-style-type: none;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 15px;
+}
+
+.masters > details{
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.masters details > summary{
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.masters li{
+    padding-left: 30px;
+    list-style-type: none;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 15px;
+}
+
+.doctoral > details{
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.doctoral details > summary{
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.doctoral li{
+    padding-left: 30px;
+    list-style-type: none;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 15px;
+}
+
+.other > details{
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.other details > summary{
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.other li{
+    padding-left: 30px;
+    list-style-type: none;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 15px;
+}
+
+.courses li {
+    list-style-position: inside;
+    list-style-type: disc;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.courses li:hover{
+    background-color: #D7F0D9;
+    border: 1px solid #ADDEB0;
+}
+
+.login {
+    margin: 10px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    background-color: #F0F0F0;
+    margin-bottom: 40px;
+}
+
+.login #username {
+    margin: 5px;
+}
+
+.login #password {
+    margin: 5px;
+    padding-bottom: 5px;
+}
+
+.box {
+    height: 25px;
+    width: 98%;
+}
+
+.box3{
+    width: 75%;
+}
+
+.login .chkbox {
+    margin-left: 5px;
+}
+
+.login .gumb {
+    width: 50px;
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    float: right;
+}
+
+.login #create {
+    margin: 5px;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.login #forgot {
+    margin: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+.recommendedlit ol{
+    margin: 5px;
+    list-style-position: inside;
+    padding-bottom: 20px;
+}
+
+.vsebina{
+    list-style-position: inside;
+    margin: 5px;
+}
+
+.vsebina h4 {
+    padding-top: 10px;
+    border-top: 1px solid #A0A0A0;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.predmeti{
+    background-color: #F0F0F0;
+    font-size: 17px;
+    font-weight: lighter;
+    list-style-position: inside;
+    padding: 10px;
+}
+
+.predmeti #predmet1 {
+    border: 1px solid #BC4A47;
+    border-radius: 5px;
+    background-color: #E5E5E5;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.predmeti #predmet2 {
+    border: 1px solid #BC4A47;
+    border-radius: 5px;
+    background-color: #E5E5E5;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.predmeti #predmet3 {
+    border: 1px solid #BC4A47;
+    border-radius: 5px;
+    background-color: #E5E5E5;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.attention {
+    list-style-image: url("https://ucilnica.fri.uni-lj.si/theme/image.php/clean/mod_assign/1413274436/icon");
+    font-size: 15px;
+    margin: 5px;
+}
+
+.forumpost {
+    list-style-image: url("https://ucilnica.fri.uni-lj.si/theme/image.php/clean/forum/1413274436/icon");
+    font-size: 15px;
+    margin: 5px;
+}
+
+.pdf {
+    list-style-image: url("https://ucilnica.fri.uni-lj.si/theme/image.php/clean/core/1413274436/f/pdf-24");
+    font-size: 15px;
+    margin: 5px;
+}
+
+.events {
+    margin: 10px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    background-color: #F0F0F0;
+    padding-bottom: 1px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.events p{
+    margin: 5px;
+}
+
+.todo {
+    margin: 10px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    background-color: #F0F0F0;
+    padding-bottom: 1px;
+}
+
+.todo p {
+    margin: 5px;
+}
+
+.highlighted {
+    background-color: #D7F0D9;
+}
+
+.highlighted2 {
+    background-color: #B7D0B9;
+}
+
+nav #except{
+    list-style-type: none;
+}
+
+.center #heding {
+    font-size: 18px;
+}
+
+table{
+    border-spacing: 0;
+}
+
+thead{
+    border-bottom: 2px solid #AC3A37;
+    background-color: #80C885;
+}
+
+tfoot {
+    border-top: 2px solid #AC3A37;
+    background-color: #80C885;
+}
+
+tr {
+    text-align: center;
+}
+
+td{
+    padding: 10px;
+}
+
+.right label{
+    display: block;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    float: right;
+    font-size: 20px;
+    padding-left: 30px;
+}
+
+.right{
+    margin-top: 26px;
+    position: absolute;
+    z-index: 0;
+}
+
+.box2 {
+    height: 20px;
+    width: 95%;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border: 1px solid #80C885;
+    border-radius: 3px;
+}
+
+.datepicker1 {
+    width: 180px;
+    height: 20px;
+    border: 1px solid #80C885;
+    border-radius: 3px;
+}
+
+.right #gumb {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 30px;
+    margin-left: 130px;
+    margin-right:  10px;
+    height: 30px;
+    background-color: #80C885;
+    border: 1px solid #2B8731;
+}
+
+.right #gumb2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
+    background-color: #80C885;
+    border: 1px solid #2B8731;
+}
+
+.right .apply {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 30px;
+    margin-left: 130px;
+    margin-right:  10px;
+    height: 30px;
+    background-color: #80C885;
+    border: 1px solid #2B8731;
+}
+
+.right .cross {
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
+    background-color: #80C885;
+    border: 1px solid #2B8731;
+}
+
+.naloga1 {
+    font-size: 16px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+#oddaja {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#bald {
+    font-weight: bold;
+}
+
+#gumb:hover {
+    cursor: pointer;
+    background-color: #ADDEB0;
+}
+
+#gumb2:hover {
+    cursor: pointer;
+    background-color: #ADDEB0;
+}
+
+.prev {
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.next {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.removeS{
+    margin: 5px;
+    height: 20px;
+}
+
+#pic {
+    position:absolute;
+    top: 140px;
+    left: 340px;
+    z-index: 0;
+}
+
+#pic2{
+    position: absolute;
+    top: 145px;
+    left: 355px;
+    z-index: 0;
+}
+
+#pic3{
+    position: absolute;
+    top: 150px;
+    left: 370px;
+    z-index: 0;
+}
+
+.toggler {
+    width: 500px;
+    height: 200px;
+}
+
+#effect {
+    display: none;
+    width: 450px;
+    height: 175px;
+    padding: 0.4em;
+    position: relative;
+    border: 1px solid #000000;
+}
+
+#effect h3 {
+    margin: 0;
+    padding: 0.1em;
+    text-align: center;
+}
+
+#inside {
+    border: 1px solid #176BA6;
+    width: 97%;
+    height: 75%;
+    margin-top: 10px;
+    background-color: #FAFAFA;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 2px;
+    resize: none;
+}
+
+#button {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    margin-left: 55%;
+    margin-top: -15%;
+}
+
+footer {
+    margin-top: 24%;
+    float:left;
+    width: 100%;
+    border-top: 2px solid #2B8731;
+    background-color: #80C885;
+    border-radius: 1px;
+}
+
+.error
+{
+   color:red;
+   text-align: left;
+   padding-bottom: 2px;
+}

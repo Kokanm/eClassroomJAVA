@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+<head>
+    <meta charset="UTF-8"/>
+    <title>Profile: Edit profile</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="jquery-ui-1.11.2/jquery-ui-1.11.2/jquery-ui.css" />
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="jquery-ui-1.11.2/jquery-ui-1.11.2/jquery-ui.js"></script>
+    <script src="profile.js"></script>
+    <script src="Detailsproverka.js"></script>
+    <script>
+        $(function () {
+            $( "#datepicker" ).datepicker({ dateFormat: "dd/mm/yy" }, {
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+
+            $('html').addClass($.fn.details.support ? 'details' : 'no-details');
+            $('details').details();
+        });
+    </script>
+</head>
+<body>
+<header>
+    <ul>
+        <li><a href="index.xhtml"><img src="Hogwartscrest.png" width="50" alt="University image"/></a></li>
+        <a href="index.xhtml"><canvas id = "text" width = "200" height = "50"></canvas></a>
+        <script>
+            var canvas = document.getElementById("text");
+            var context = canvas.getContext("2d");
+
+            context.font = "bold 30px sans-serif";
+            context.textAlign = "center";
+            context.lineWidth = 2;
+            context.strokeStyle = "black";
+            context.strokeText("E-Classroom", 100, 40);
+        </script>
+        <li id="login">
+            <h:form rendered="#{userBean.loggedIn}">
+                <p>You are currently logged in as 
+                    <h:commandLink value="#{userBean.firstname} #{userBean.lastname} " action="myprofile.html"/>
+                    (<h:commandLink value="log out" action="#{userBean.logout()}" />)</p>
+            </h:form>
+        </li>  
+    </ul>
+</header>
+
+
+<section>
+    <div class="laside">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="index.xhtml">Home</a></li>
+                <li><a href="myprofile.html">My profile</a></li>
+                <li id="except"><details>
+                    <summary><a href="mycourses.html">My courses</a></summary>
+                    <ul id="mycourses">
+                        <li><a href="predmet.html">Defence Against the Dark Arts</a></li>
+                        <li><a href="predmet.html">Flying</a></li>
+                        <li><a href="predmet.html">Potions</a></li>
+                    </ul>
+                </details></li>
+            </ul>
+        </nav>
+
+        <div class="Administration">
+            <h3>Administration</h3>
+            <ul>
+                <li><a href="editprofile.xhtml">Edit profile</a></li>
+                <li><a href="change.xhtml">Change password</a></li>
+                <li><a href="messaging.html">Messaging</a></li>
+            </ul>
+        </div>
+
+        <div class="events">
+            <h3>Upcoming events</h3>
+            <p>No upcoming events</p>
+        </div>
+    </div>
+
+    <div class="centers">
+        <div class="right">
+            <h:form id="prof">
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="First name  "></h:outputLabel>
+                    <h:inputText id="firstname" class="box2" value="#{userBean.firstname}" title="Enter your first name" required="true"/>
+               
+                    <h:outputLabel value="Surname  "></h:outputLabel>
+                    <h:inputText id="surname" styleClass="box2" value="#{userBean.lastname}" title="Enter your surname" required="true"/>
+                  
+                
+                    <h:outputLabel value="Telephone  "></h:outputLabel>
+                    <h:inputText id="telephone" styleClass="box2" value="#{userBean.telephone}"  required="true"/>
+                               
+                    <h:outputLabel value="Telephone display  "></h:outputLabel>
+                    <input list="moznosti" id="teldisp" class="box2"/>
+                    <datalist id="moznosti">
+                        <option>Hide my telephone from everyone</option>
+                        <option>Allow everyone to see my phone no.</option>
+                        <option>Allow only other course members to see my phone no.</option>
+                    </datalist>
+                
+                    <h:outputLabel value="Email  "></h:outputLabel>
+                    <h:inputText id="email" class="box2" value="#{userBean.email}" title="Enter your email address" required="true"/>
+              
+                    <h:outputLabel value="Email display  "></h:outputLabel>
+                        <input list="moznosti2" id="emaildisp" class="box2"/>
+                        <datalist id="moznosti2">
+                            <option>Hide my email address from everyone</option>
+                            <option>Allow everyone to see my address</option>
+                            <option>Allow only other course members to see my address</option>
+                        </datalist>
+                  
+                    <h:outputLabel value="City/town  "></h:outputLabel>
+                    <h:inputText id="city" class="box2" value="#{userBean.city}"/>
+                   
+                    <h:outputLabel value="Country  "></h:outputLabel>
+                    <h:inputText id="country" class="box2" value="#{userBean.country}"/>
+                  
+                    <h:outputLabel value="Date of birth  "></h:outputLabel>
+                    <h:inputText styleClass="datepicker1" value="#{userBean.birthday}" />
+                </h:panelGrid>
+                
+                <h:commandButton type = "submit" value = "Update profile" action="#{userBean.updateProfile()}" styleClass="apply"/>
+                <h:commandButton type = "reset" value = "Cancel" styleClass="cross" />
+            </h:form>
+        </div>
+    </div>
+
+
+</section>
+<footer>
+    <h6>&copy; 2014-2015 by Hogwarts University of Witchcraft and Wizardry.</h6>
+    <address>
+        Contact us at dumbledore@hog.uni-lj.si
+    </address>
+
+</footer>
+<script src="profiler.js"></script>
+</body>
+</html>
